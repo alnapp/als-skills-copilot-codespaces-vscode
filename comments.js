@@ -70,4 +70,6 @@ router.get('/update/:commentId', (request, response) => {
         throw error2;
       }
       db.query(`SELECT * FROM comment WHERE id=?`, [commentId], (error3, comment) => {
-        if(error3
+        if(error3){
+          throw error3;
+        }
